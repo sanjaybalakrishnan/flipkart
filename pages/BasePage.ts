@@ -120,6 +120,8 @@ export class BasePage {
         try {
           await newPage.waitForLoadState('load');
           await newPage.locator(this.addToCartButtonLocatorString).click()
+          await this.page.waitForTimeout(2500)
+          await expect(newPage.url()).toContain('https://www.flipkart.com/viewcart')
         } finally {
           await newPage.close();
         }

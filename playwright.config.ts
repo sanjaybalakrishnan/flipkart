@@ -23,8 +23,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
-  /** test timeout of 10 minutes */
-  timeout: 600000,
+  /** test timeout of 5 minutes */
+  timeout: 300000,
   /** expect timeout of 15 secs */
   expect: {
     timeout: 15000
@@ -39,20 +39,23 @@ export default defineConfig({
     trace: 'on',
 
     headless: process.env.CI ? true : false,
-    
+
+    video: 'on',
+
+    viewport: {width: 1920, height: 1080},
+
     launchOptions: {
       // 1
-      args: ["--start-maximized", "--Incognito"],
+      args: ["--start-maximized"],
     },
-
-    video: 'retain-on-failure'
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { viewport: null },
+      use: { viewport: null ,     
+  },
 
     }]
 });
