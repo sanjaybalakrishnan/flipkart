@@ -23,8 +23,6 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
-  /** test timeout of 5 minutes */
-  timeout: 300000,
   /** expect timeout of 15 secs */
   expect: {
     timeout: 15000
@@ -54,8 +52,6 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { viewport: null ,     
-  },
-
+      use: { viewport: null},
     }]
 });

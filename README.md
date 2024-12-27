@@ -36,7 +36,6 @@ The repo can be cloned via:
 
 ### Misc
 1. Tests run on chrome and video, traces are enabled 
-2. `Test timeout` is set to `10 minutes`
 3. `expect timeout` is set to `15 secs`
 
 #### Note:
