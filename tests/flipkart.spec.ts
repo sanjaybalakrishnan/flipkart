@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-// Tests
+// TC01 will fail since the order is not in ascending order even after setting the filter
 test('TC01 - Validate Sort functionality for products displayed', {tag: '@flipkart'} , async ({ basePage }) => {
     await basePage.searchText('shoes')
     await basePage.setFilter()
